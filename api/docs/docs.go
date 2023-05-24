@@ -118,7 +118,7 @@ const docTemplate = `{
                     }
                 ],
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "successfully reserved car {id}",
                         "schema": {
                             "type": "string"

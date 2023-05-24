@@ -218,7 +218,7 @@ func TestReserveCar(t *testing.T) {
 			},
 			requestBody:  convertJSONToBuf(t, test_userdata),
 			requestURL:   "/api/cars/reserve?id=1",
-			expectedCode: http.StatusOK,
+			expectedCode: http.StatusCreated,
 			expectedBody: "\"successfully reserved car 1\"\n",
 		},
 		{

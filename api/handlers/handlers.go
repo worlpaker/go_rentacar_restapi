@@ -53,7 +53,7 @@ func (s *Server) ShowReservedCars(w http.ResponseWriter, r *http.Request) {
 // @Produce json
 // @Param id query string true "Car ID"
 // @Param user body models.User true "User information"
-// @Success 200 {string} string "successfully reserved car {id}"
+// @Success 201 {string} string "successfully reserved car {id}"
 // @Failure 400 {string} string "missing required parameters"
 // @Failure 400 {string} string "error occurred while converting data"
 // @Failure 400 {string} string "empty request body"
@@ -77,7 +77,7 @@ func (s *Server) ReserveCar(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	render := fmt.Sprintf("successfully reserved car %d", id)
-	Render(w, 200, render)
+	Render(w, 201, render)
 }
 
 // AvailableCars returns a list of available cars for a given date, time(hour), and location.
