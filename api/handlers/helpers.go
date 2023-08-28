@@ -10,9 +10,15 @@ import (
 )
 
 // Render helper function to render page.
-func Render(w http.ResponseWriter, status int, v any) error {
-	w.WriteHeader(status)
-	return json.NewEncoder(w).Encode(v)
+func Render(w http.ResponseWriter, code int, v any) error {
+	w.WriteHeader(code)
+
+	if err := json.NewEncoder(w).Encode(v); err != nil {
+		http.Error(w, err.Error(), 500)
+		return err
+	}
+
+	return nil
 }
 
 // ReadJSON helper function to read JSON data.
