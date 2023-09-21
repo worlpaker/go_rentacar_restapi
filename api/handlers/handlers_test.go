@@ -24,11 +24,6 @@ type methods struct {
 	h http.HandlerFunc
 }
 
-type fakeServer struct {
-	r *http.ServeMux
-	s *Server
-}
-
 // Methods restricts an HTTP handler function to specified HTTP methods.
 func (m *methods) Methods(s ...string) http.HandlerFunc {
 	return middleware.MethodRestricted(m.h, s)

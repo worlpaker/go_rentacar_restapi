@@ -1,8 +1,8 @@
 package Mongo
 
 import (
+	Log "backend/internal/log"
 	"backend/models"
-	Log "backend/pkg/helpers/log"
 	"context"
 	"time"
 

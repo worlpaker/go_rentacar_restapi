@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"backend/models"
-	"backend/pkg/helpers"
-	Log "backend/pkg/helpers/log"
+	"backend/internal/helpers"
+	Log "backend/internal/log"
 	"encoding/json"
 	"net/http"
 	"strconv"

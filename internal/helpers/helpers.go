@@ -1,7 +1,7 @@
 package helpers
 
 import (
-	Log "backend/pkg/helpers/log"
+	Log "backend/internal/log"
 	"time"
 )
 

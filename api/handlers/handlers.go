@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	Log "backend/pkg/helpers/log"
+	Log "backend/internal/log"
 	"fmt"
 	"net/http"
 )
