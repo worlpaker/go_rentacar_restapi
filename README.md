@@ -6,7 +6,7 @@ This project is a simple REST API for a car rental service, implemented in Go wi
 
 ## Features
 
-- Manual handling of routing, middlewares, and helper functions.
+- Manual handling of routing, middlewares, logging and helper functions.
 
 - Swagger Documentation
 
