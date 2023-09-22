@@ -62,13 +62,13 @@
                         }
                     },
                     "400": {
-                        "description": "missing required parameters, error occurred while converting data",
+                        "description": "Bad Request",
                         "schema": {
                             "type": "string"
                         }
                     },
                     "500": {
-                        "description": "failed to find data, an error occurred while retrieving data from the database, no active offices available, no data found",
+                        "description": "Internal Server Error",
                         "schema": {
                             "type": "string"
                         }
@@ -112,13 +112,13 @@
                         }
                     },
                     "400": {
-                        "description": "missing required parameters, error occurred while converting data, empty request body, error occurred while decoding JSON",
+                        "description": "Bad Request",
                         "schema": {
                             "type": "string"
                         }
                     },
                     "500": {
-                        "description": "failed to update data, the car is already reserved",
+                        "description": "Internal Server Error",
                         "schema": {
                             "type": "string"
                         }
@@ -148,7 +148,7 @@
                         }
                     },
                     "500": {
-                        "description": "failed to find data, an error occurred while retrieving data from the database, no data found",
+                        "description": "Internal Server Error",
                         "schema": {
                             "type": "string"
                         }
@@ -178,7 +178,7 @@
                         }
                     },
                     "500": {
-                        "description": "failed to find data, an error occurred while retrieving data from the database, no data found",
+                        "description": "Internal Server Error",
                         "schema": {
                             "type": "string"
                         }

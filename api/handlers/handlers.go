@@ -13,9 +13,7 @@ import (
 // @ID ShowLocations
 // @Produce json
 // @Success 200 {object} []models.Locations
-// @Failure 500 {string} string "failed to find data"
-// @Failure 500 {string} string "an error occurred while retrieving data from the database"
-// @Failure 500 {string} string "no data found"
+// @Failure 500 {object} string "Internal Server Error"
 // @Router /api/locations/show [get]
 func (s *Server) ShowLocations(w http.ResponseWriter, r *http.Request) {
 	result, err := s.DB.Mongo.ShowLocations()
@@ -33,9 +31,7 @@ func (s *Server) ShowLocations(w http.ResponseWriter, r *http.Request) {
 // @ID ShowReservedCars
 // @Produce json
 // @Success 200 {object} []models.Cars
-// @Failure 500 {string} string "failed to find data"
-// @Failure 500 {string} string "an error occurred while retrieving data from the database"
-// @Failure 500 {string} string "no data found"
+// @Failure 500 {object} string "Internal Server Error"
 // @Router /api/cars/showreservedcars [get]
 func (s *Server) ShowReservedCars(w http.ResponseWriter, r *http.Request) {
 	result, err := s.DB.Mongo.ShowReservedCars()
@@ -54,12 +50,8 @@ func (s *Server) ShowReservedCars(w http.ResponseWriter, r *http.Request) {
 // @Param id query string true "Car ID"
 // @Param user body models.User true "User information"
 // @Success 201 {string} string "successfully reserved car {id}"
-// @Failure 400 {string} string "missing required parameters"
-// @Failure 400 {string} string "error occurred while converting data"
-// @Failure 400 {string} string "empty request body"
-// @Failure 400 {string} string "error occurred while decoding JSON"
-// @Failure 500 {string} string "failed to update data"
-// @Failure 500 {string} string "the car is already reserved"
+// @Failure 400 {object} string "Bad Request"
+// @Failure 500 {object} string "Internal Server Error"
 // @Router /api/cars/reserve [post]
 func (s *Server) ReserveCar(w http.ResponseWriter, r *http.Request) {
 	id, err := ParseQuery_ReserveCar(r)
@@ -91,12 +83,8 @@ func (s *Server) ReserveCar(w http.ResponseWriter, r *http.Request) {
 // @Param time_end(hour) query string true "Time in the format of hh.mm"
 // @Param location query string true "Location by id"
 // @Success 200 {object} []models.Cars
-// @Failure 400 {string} string "missing required parameters"
-// @Failure 400 {string} string "error occurred while converting data"
-// @Failure 500 {string} string "failed to find data"
-// @Failure 500 {string} string "an error occurred while retrieving data from the database"
-// @Failure 500 {string} string "no active offices available"
-// @Failure 500 {string} string "no data found"
+// @Failure 400 {object} string "Bad Request"
+// @Failure 500 {object} string "Internal Server Error"
 // @Router /api/cars/available [get]
 func (s *Server) AvailableCars(w http.ResponseWriter, r *http.Request) {
 	data, err := ParseQuery_AvailableCars(r)
